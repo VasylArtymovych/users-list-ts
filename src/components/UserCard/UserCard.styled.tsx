@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const CardContainer = styled.div`
   width: 28rem;
@@ -11,6 +11,7 @@ export const CardContainer = styled.div`
   background-color: #997af0;
   border-radius: 1rem;
   border: 0.2rem solid #4e0eff;
+  cursor: grab;
 
   span.order {
     padding: 0.5rem;
@@ -40,6 +41,7 @@ export const CardContainer = styled.div`
     background-color: #4e0eff;
     border-radius: 50%;
     border: none;
+    cursor: pointer;
     :hover {
       background-color: #6f49d7;
       border: 0.2rem solid #4e0eff;

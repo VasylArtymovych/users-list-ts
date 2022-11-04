@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const ListContainer = styled.ul`
   position: relative;
@@ -6,7 +6,7 @@ export const ListContainer = styled.ul`
   flex-direction: column;
   align-items: center;
   width: 35rem;
-  height: 45rem;
+  height: 100vh;
   padding: 0.7rem 0;
   margin: 0 auto;
   background-color: #06041c;

@@ -34,4 +34,5 @@ export type UsersContextType = {
   setUsers: (data: IUser[]) => void;
   isLoading: boolean;
   setIsLoading: (data: boolean) => void;
+  sortUsersByRank: (data: IUser[]) => IUser[];
 };

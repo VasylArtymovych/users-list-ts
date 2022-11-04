@@ -1,0 +1,21 @@
+31.10.22:
+- created start files (structure) backend. 
+- added required modeles for backend.
+- configured chalk library to colored Logging. 
+- created React app.
+- configured connection to DB and runiing server.
+- added routes.
+
+01.11.22:
+- created controllers and services to work with DB.
+- added arror handler and customError.
+- added User model.
+- added body and objectID validation.
+
+02.11.22:
+- completed last route (delete user).
+- configured client absolete imports .
+- added required modules (client).
+- created hook to fetch Users.
+- created Form to create User.
+
