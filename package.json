@@ -14,6 +14,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.6.0",
+    "react-loader-spinner": "^5.3.4",
     "react-scripts": "5.0.1",
     "react-toastify": "^9.1.0",
     "styled-components": "^5.3.6",
@@ -24,7 +25,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "server": "npm run server --prefix backend",
+    "install:backend": "npm install --prefix backend"
   },
   "eslintConfig": {
     "extends": [

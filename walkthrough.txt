@@ -1,4 +1,4 @@
-31.10.22:
+31.10.22 (4hrs):
 - created start files (structure) backend. 
 - added required modeles for backend.
 - configured chalk library to colored Logging. 
@@ -6,16 +6,38 @@
 - configured connection to DB and runiing server.
 - added routes.
 
-01.11.22:
+01.11.22 (3hrs):
 - created controllers and services to work with DB.
 - added arror handler and customError.
 - added User model.
 - added body and objectID validation.
 
-02.11.22:
+02.11.22 (4hrs):
 - completed last route (delete user).
-- configured client absolete imports .
-- added required modules (client).
-- created hook to fetch Users.
-- created Form to create User.
+- created structure frontend.
+- configured React absolete imports .
+- added required modules (React client).
+- created hook context to fetch and store Users, and methods of interaction with them.
+- created Form to add User, add styles.
+- created Utils to store routes and toast options.
+
+03.11.22 (4.5hrs):
+- created Userslist component.
+- created UserCard component.
+- addeed methods to edit user data and remove user.
+- added method sortUsersByRank to hook context.
+- styled both components.
+
+04.11.22 (3hrs): 
+- added drag n drop to Card component;
+- added and updated some styles.
+
+05.11.22(3hrs): 
+- added modal component .
+- added Button component.
+- added Loader component.
+
+
+
+
 

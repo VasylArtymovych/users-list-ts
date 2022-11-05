@@ -41,8 +41,8 @@ export const Form = styled.form`
 
   .close_btn {
     position: absolute;
-    top: 0.8rem;
-    right: 1rem;
+    top: 0.6rem;
+    right: 1.3rem;
     display: flex;
     justify-content: center;
     align-items: center;

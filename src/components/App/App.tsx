@@ -5,6 +5,7 @@ import List from "components/UsersList";
 import UserCard from "components/UserCard";
 import Modal from "components/Modal";
 import Button from "components/Button";
+import Loader from "components/Loader";
 import { IUser } from "types";
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
       )}
 
       {isLoading ? (
-        <div>Loading....</div>
+        <Loader />
       ) : (
         <List
           items={users}
