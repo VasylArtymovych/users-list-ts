@@ -33,6 +33,7 @@ function AddUserFrom({ onCloseModal }: IAddUserFromProps) {
         `User with name: ${data.user.userName} and rank: ${data.user.rank} created.`,
         toastOptions
       );
+      onCloseModal();
     } catch (error: any) {
       toast.error(error.response.data.error, toastOptions);
     }

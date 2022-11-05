@@ -25,8 +25,7 @@ export const UsersProvider: FC<React.PropsWithChildren> = ({ children }) => {
       try {
         setIsLoading(true);
         const { data } = await axios.get<IGetUsersResponse>("/");
-        const sortedUsers = sortUsersByRank(data.users);
-        setUsers(sortedUsers);
+        setUsers(sortUsersByRank(data.users));
         setIsLoading(false);
       } catch (error: any) {
         setIsLoading(false);

@@ -6,10 +6,11 @@ export const ListContainer = styled.ul`
   align-items: center;
   width: 35rem;
   height: 100%;
-  padding: 0.7rem 0;
+  padding: 0.7rem 1.7rem;
   margin: 0 auto;
   background-color: #06041c;
   border-radius: 2rem;
+  border: 0.2rem solid #4e0eff;
   overflow: auto;
   ::-webkit-scrollbar {
     display: block;
