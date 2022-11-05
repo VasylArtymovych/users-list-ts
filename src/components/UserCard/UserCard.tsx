@@ -13,13 +13,14 @@ interface IUserCardProps {
   user: IUser;
   index: number;
 }
+interface IEditedValue {
+  userName?: string;
+  rank?: number;
+}
 
 const UserCard: FC<IUserCardProps> = ({ user, index }) => {
   const [isEdited, setIsEdited] = useState(false);
-  const [editedValue, setEditedValue] = useState<{
-    userName?: string;
-    rank?: number;
-  }>({});
+  const [editedValue, setEditedValue] = useState<IEditedValue>({});
   const { users, setUsers, sortUsersByRank } = useUsers()!;
 
   const editBtnHandler = async (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -33,8 +34,8 @@ const UserCard: FC<IUserCardProps> = ({ user, index }) => {
           const updateUser = users.map((u) =>
             u._id === user._id ? { ...user, ...editedValue } : u
           );
-          const sortUpdateUsers = sortUsersByRank(updateUser);
-          setUsers(sortUpdateUsers);
+
+          setUsers(sortUsersByRank(updateUser));
           toast.info(
             `User data: ${editedValue?.userName ?? ""} ${
               editedValue?.rank ?? ""
@@ -97,15 +98,14 @@ const UserCard: FC<IUserCardProps> = ({ user, index }) => {
       }
       return u;
     });
-    const sortedUsers = sortUsersByRank(dragableUsers);
-    setUsers(sortedUsers);
+
+    setUsers(sortUsersByRank(dragableUsers));
   };
 
   return (
     <CardContainer
       draggable={true}
       onDragStart={dragStartHandler}
-      // onDragLeave={dragLeaveHandler}
       onDragEnd={dragEndHandler}
       onDragOver={dragOverHandler}
       onDrop={dropHandler}
@@ -116,13 +116,13 @@ const UserCard: FC<IUserCardProps> = ({ user, index }) => {
           <input
             type="text"
             name="userName"
-            placeholder="Name"
+            placeholder={`${user.userName}`}
             onChange={onChangeHandler}
           />
           <input
             type="number"
             name="rank"
-            placeholder="Rank"
+            placeholder={`${user.rank}`}
             onChange={onChangeHandler}
           />
         </>

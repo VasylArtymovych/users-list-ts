@@ -1,31 +1,36 @@
 import axios from "axios";
 import React from "react";
 import { toast } from "react-toastify";
+import { GrClose } from "react-icons/gr";
 import { createUserRoute, toastOptions } from "utils";
-import { ICreateUpdateUserResponse, IAddUserForm, IUser } from "types";
+import { ICreateUpdateUserResponse, IAddUserForm } from "types";
+import { Form } from "./AddUserForm.styled";
+import { useUsers } from "hooks";
 
-interface UserFormProps {
+interface IAddUserFromProps {
   onCloseModal: () => void;
-  addUsers: (data: IUser) => void;
 }
 
-function AddUserFrom({ onCloseModal, addUsers }: UserFormProps) {
+function AddUserFrom({ onCloseModal }: IAddUserFromProps) {
+  const { users, setUsers, sortUsersByRank } = useUsers()!;
+
   const submitHandler = async (e: React.FormEvent<IAddUserForm>) => {
     e.preventDefault();
     const userName = e.currentTarget.elements.userName.value;
     e.currentTarget.reset();
 
     try {
-      const {
-        data: { user },
-      } = await axios.post<ICreateUpdateUserResponse>(createUserRoute, {
-        userName,
-      });
-      if (user) {
-        addUsers(user);
+      const { data } = await axios.post<ICreateUpdateUserResponse>(
+        createUserRoute,
+        {
+          userName,
+        }
+      );
+      if (data.user) {
+        setUsers(sortUsersByRank([...users, data.user]));
       }
       toast.info(
-        `User with name: ${user.userName} and rank: ${user.rank} created.`,
+        `User with name: ${data.user.userName} and rank: ${data.user.rank} created.`,
         toastOptions
       );
     } catch (error: any) {
@@ -34,15 +39,22 @@ function AddUserFrom({ onCloseModal, addUsers }: UserFormProps) {
   };
 
   return (
-    <form onSubmit={submitHandler}>
+    <Form onSubmit={submitHandler}>
+      <button type="button" className="close_btn" onClick={onCloseModal}>
+        <GrClose />
+      </button>
+
       <input
         type="text"
         name="userName"
         title="Name is required"
         placeholder="User name"
       />
-      <button type="submit">Add User</button>
-    </form>
+
+      <button type="submit" className="submit_btn">
+        Add User
+      </button>
+    </Form>
   );
 }
 

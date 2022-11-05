@@ -55,5 +55,9 @@ export const CardContainer = styled.div`
     outline: none;
     color: white;
     background-color: #4e0eff;
+    border-radius: 0.4rem;
+    ::placeholder {
+      color: grey;
+    }
   }
 `;

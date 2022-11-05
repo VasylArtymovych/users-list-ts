@@ -1,18 +1,16 @@
 import styled from "styled-components";
 
 export const ListContainer = styled.ul`
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 35rem;
-  height: 100vh;
+  height: 100%;
   padding: 0.7rem 0;
   margin: 0 auto;
   background-color: #06041c;
   border-radius: 2rem;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: auto;
   ::-webkit-scrollbar {
     display: block;
     width: 0.3rem;
