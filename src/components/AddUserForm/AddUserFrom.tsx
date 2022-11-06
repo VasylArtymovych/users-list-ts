@@ -50,6 +50,7 @@ function AddUserFrom({ onCloseModal }: IAddUserFromProps) {
         name="userName"
         title="Name is required"
         placeholder="User name"
+        required
       />
 
       <button type="submit" className="submit_btn">

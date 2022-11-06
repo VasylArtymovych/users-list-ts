@@ -1,2 +1,3 @@
-- To start server: npm run server;
-- To start client: npm run client;
+To start server:
+
+- npm run server

@@ -6,6 +6,7 @@ const modalRootElement = document.getElementById("modal")!;
 interface IModalProps {
   children?: React.ReactNode;
 }
+
 function Modal({ children }: IModalProps) {
   return createPortal(
     <BackdropContainer>{children}</BackdropContainer>,

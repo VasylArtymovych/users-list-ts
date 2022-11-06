@@ -2,7 +2,6 @@ import asyncHandler from 'express-async-handler';
 import { Request, Response, NextFunction } from 'express';
 import { UserServices } from '../services';
 import { IUserData } from '../interfaces';
-import { string } from 'joi';
 
 class UserController {
   addUser = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
