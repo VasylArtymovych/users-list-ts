@@ -28,7 +28,8 @@ function runServer() {
 
     res.on('finish', () => {
       /** Log the Response */
-      Loggin.info(`Incoming -> Method: [${req.method}] - Url: [${req.url}] - IP: [${req.socket.remoteAddress}] - Status: [${res.statusCode}]`);
+      Loggin.info(`Incoming -> Method: [${req.method}] - Url: [${req.url}] - IP: [${req.socket.remoteAddress}]
+      - Status: [${res.statusCode}]`);
     });
 
     next();
